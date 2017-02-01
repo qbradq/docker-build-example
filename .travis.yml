@@ -7,7 +7,7 @@ before_install:
   - docker run -itd --name build qbradq/example-build
   - docker exec build git clone https://github.com/qbradq/docker-build-example.git
 script:
-  - docker exec tos-build cmake -H/repo -B/build
-  - docker exec tos-build cmake --build /build
-  - docker exec tos-build cmake --build /build --target test
+  - docker exec build cmake -H/repo -B/build
+  - docker exec build cmake --build /build
+  - docker exec build cmake --build /build --target test
 
