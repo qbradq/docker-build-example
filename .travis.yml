@@ -5,7 +5,7 @@ services:
 before_install:
   - docker pull qbradq/example-build:latest
   - docker run -itd --name build qbradq/example-build
-  - docker exec build git clone https://github.com/qbradq/docker-build-example.git
+  - docker exec build git clone https://github.com/qbradq/docker-build-example.git /repo
 script:
   - docker exec build cmake -H/repo -B/build
   - docker exec build cmake --build /build
