@@ -10,4 +10,6 @@ script:
   - docker exec build cmake -H/repo -B/build
   - docker exec build cmake --build /build
   - docker exec build cmake --build /build --target test
+after_success:
+  - docker exec build /repo/codecov.sh
 
