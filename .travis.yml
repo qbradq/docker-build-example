@@ -1,0 +1,13 @@
+sudo: required
+language: cpp
+services:
+  - docker
+before_install:
+  - docker pull qbradq/example-build:latest
+  - docker run -itd --name build qbradq/example-build
+  - docker exec build git clone https://github.com/qbradq/docker-build-example.git
+script:
+  - docker exec tos-build cmake -H/repo -B/build
+  - docker exec tos-build cmake --build /build
+  - docker exec tos-build cmake --build /build --target test
+
