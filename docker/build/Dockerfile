@@ -3,7 +3,7 @@ MAINTAINER   Norman B. Lancaster <qbradq@gmail.com>
 CMD          bash
 
 # Required system packages
-RUN apt-get update && apt-get -y install --no-install-recommends \
+RUN apt-get update && apt-get -y install \
   apt-utils \
   build-essential \
   curl \
